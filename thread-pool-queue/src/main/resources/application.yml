@@ -1,0 +1,26 @@
+server:
+  #port: 9040
+  tomcat:
+    use-relative-redirects: true
+    threads:
+      max: 400
+  servlet:
+    session:
+      timeout: 600m
+  error:
+    path: /error
+
+spring:
+  web:
+    resources:
+      static-locations: classpath:/static/
+      add-mappings: true
+
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
